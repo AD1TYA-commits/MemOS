@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>MemOS</title>
+    </head>
+    <body>
+        <h1>Upload pdf</h1>
+        {%if uploaded %}
+            <p style ="color:green;">
+                PDF UPLOADED SUCCESSFULLY!
+            </p>
+        {% endif %}
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <input type = "file" name="pdf">
+            <button type="submit">
+                Upload
+            </button>
+        </form>
+    </body>
+</html>
